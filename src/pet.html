@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-accent-500: #c9a227;
+        --animate-shake: shake 1s ease-in-out;
+        --animate-wiggle: wiggle 2s infinite;
+      }
+      @utility font-lato {
+        font-family: "Lato", sans-serif;
+      }
+      @layer components {
+        .navText {
+          @apply no-underline text-white p-[15px_25px] md:p-[20px_30px] text-xl md:text-2xl my-[5px] block w-full text-left lg:p-[15px_10px] lg:my-[5px_0] lg:w-auto lg:inline-block
+          hover:text-[22px] hover:font-bold hover:transform hover:rotate-[-5deg] hover:animate-shake;
+        }
+        .glassMorphic {
+          @apply bg-white/10 backdrop-blur-lg border-b border-white/10;
+        }
+      }
+      @keyframes shake {
+        0%,
+        100% {
+          transform: translate(1px, 1px) rotate(0deg);
+        }
+        10% {
+          transform: translate(-1px, -2px) rotate(-1deg);
+        }
+        20% {
+          transform: translate(-3px, 0px) rotate(1deg);
+        }
+        30% {
+          transform: translate(3px, 2px) rotate(0deg);
+        }
+        40% {
+          transform: translate(1px, -1px) rotate(1deg);
+        }
+        50% {
+          transform: translate(-1px, 2px) rotate(-1deg);
+        }
+        60% {
+          transform: translate(-3px, 1px) rotate(0deg);
+        }
+        70% {
+          transform: translate(3px, 1px) rotate(-1deg);
+        }
+        80% {
+          transform: translate(-1px, -1px) rotate(1deg);
+        }
+        90% {
+          transform: translate(1px, 2px) rotate(0deg);
+        }
+      }
+
+      @keyframes wiggle {
+        0%,
+        80% {
+          transform: rotate(0deg);
+        }
+        85% {
+          transform: rotate(5deg);
+        }
+        95% {
+          transform: rotate(-5deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+    </style>
+    <script src="script.js"></script>
+    <script src="preventZoom.js"></script>
+  </head>
+
+  <body
+    class="bg-black text-white font-lato overflow-x-hidden overflow-y-auto flex-col"
+  >
+    <!-- bg bolo -->
+    <div class="fixed top-0 z-[-1]">
+      <img
+        src="../assets/Red_background.svg"
+        alt="background"
+        class="h-full w-full object-cover"
+      />
+    </div>
+    <div
+      class="hidden fixed inset-0 z-[40]"
+      id="overlay"
+      style="background-color: rgba(0, 0, 0, 0.3)"
+    ></div>
+
+    <header
+      class="glassMorphic sticky flex justify-between items-center w-full px-[2vw] top-0 z-50 text-white"
+    >
+      <img src="../assets/Logo.png" alt="logo" class="w-[20vw] md:w-[8vw]" />
+      <div
+        class="flex lg:hidden flex-col justify-between absolute right-5 top-[1.5vh] w-[30px] md:w-[35px] h-[20px] md:h-[25px] cursor-pointer z-[200] bg-transparent"
+        id="hamburgerMenu"
+      >
+        <span
+          class="w-full h-[3px] md:h-[4px] bg-white transition-all transform origin-center"
+        ></span>
+        <span
+          class="w-full h-[3px] md:h-[4px] bg-white transition-all transform origin-center"
+        ></span>
+        <span
+          class="w-full h-[3px] md:h-[4px] bg-white transition-all transform origin-center"
+        ></span>
+      </div>
+      <nav
+        class="fixed right-0 top-0 h-screen w-4/5 gap-[3vw] px-[2vw] max-w-[250px] md:max-w-[300px] bg-black z-[190] flex flex-col pt-[60px] md:pt-[75px] transform translate-x-full transition-all duration-300 ease-in-out lg:translate-x-0 lg:static lg:h-auto lg:w-auto lg:pt-0 lg:flex lg:flex-row lg:justify-end lg:bg-transparent lg:transition-none"
+        id="navigation"
+      >
+        <a class="navText" href="index.html">Home</a>
+        <a class="navText" href="project.html">Projects</a>
+        <a class="navText" href="contact.html">Contact</a>
+        <a class="navText text-accent-500" href="pet.html">Pets</a>
+      </nav>
+    </header>
+
+    <div
+      class="carousel relative w-4/5 max-w-[600px] overflow-hidden rounded-[10px] shadow-md mx-auto mt-10"
+    >
+      <div class="img-wrap flex transition-tansform duration-500 ease-in-out">
+        <img
+          class="w-full h-auto flex-shrink-0"
+          alt="kevin"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH0hSylN8vv2h5Ms9O4I_b0PUybRnCyEUAJg&s"
+        />
+
+        <img
+          class="w-full h-auto flex-shrink-0"
+          alt="arya"
+          src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Anjing_Chihuahua.jpg"
+        />
+
+        <img
+          class="w-full h-auto flex-shrink-0"
+          alt="radit"
+          src="https://i.natgeofe.com/k/0ed36c42-672a-425b-9e62-7cc946b98051/pig-fence_square.jpg"
+        />
+
+        <img
+          class="w-full h-auto flex-shrink-0"
+          alt="babi"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSzyxJWAjvU15zmsFGLLxehm_42skbpWjC8w&s"
+        />
+
+        <img
+          class="w-full h-auto flex-shrink-0"
+          alt="handsome"
+          src="https://thumbs.dreamstime.com/b/smiling-donkey-big-teeth-humorous-close-up-widely-clearly-visible-countryside-background-softly-blurred-bright-natural-408359454.jpg"
+        />
+      </div>
+      <button
+        class="text-black btn opacity-50 font-bold glassMorphic bg-white/75 p-4 prev absolute top-1/2 -translate-y-1/2 left-2.5 cursor-pointer rounded-full z-10"
+      >
+        <
+      </button>
+      <button
+        class="text-black btn opacity-50 font-bold glassMorphic bg-white/75 p-4 next absolute top-1/2 -translate-y-1/2 right-2.5 cursor-pointer rounded-full z-10"
+      >
+        >
+      </button>
+    </div>
+    <script src="awok.js"></script>
+
+    <footer
+      class="glassMorphic hidden desktop-footer fixed bottom-0 py-[5vh] text-white flex-col justify-items-center lg:flex lg:relative lg:mt-0 lg:text-center lg:w-full"
+    >
+      <a href="contact.html" class="underline font-extrabold text-3xl"
+        >Contact.Me();</a
+      >
+    </footer>
+  </body>
+</html>

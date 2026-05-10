@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-accent-500: #c9a227;
+        --animate-shake: shake 1s ease-in-out;
+        --animate-wiggle: wiggle 2s infinite;
+      }
+      @utility font-lato {
+        font-family: "Lato", sans-serif;
+      }
+      @layer components {
+        .navText {
+          @apply no-underline text-white p-[15px_25px] md:p-[20px_30px] text-xl md:text-2xl my-[5px] block w-full text-left lg:p-[15px_10px] lg:my-[5px_0] lg:w-auto lg:inline-block
+          hover:text-[22px] hover:font-bold hover:transform hover:rotate-[-5deg] hover:animate-shake;
+        }
+        .glassMorphic {
+          @apply bg-white/10 backdrop-blur-lg border-b border-white/10;
+        }
+        .secIndent {
+          @apply ml-[15vw] lg:ml-[5vw];
+        }
+        .firstIndent {
+          @apply ml-[8vw] lg:ml-[2vw];
+        }
+        .formFormat {
+          @apply bg-white text-accent-500 py-[0.5vh] px-[1vw] lg:text-2xl;
+        }
+      }
+      @keyframes shake {
+        0%,
+        100% {
+          transform: translate(1px, 1px) rotate(0deg);
+        }
+        10% {
+          transform: translate(-1px, -2px) rotate(-1deg);
+        }
+        20% {
+          transform: translate(-3px, 0px) rotate(1deg);
+        }
+        30% {
+          transform: translate(3px, 2px) rotate(0deg);
+        }
+        40% {
+          transform: translate(1px, -1px) rotate(1deg);
+        }
+        50% {
+          transform: translate(-1px, 2px) rotate(-1deg);
+        }
+        60% {
+          transform: translate(-3px, 1px) rotate(0deg);
+        }
+        70% {
+          transform: translate(3px, 1px) rotate(-1deg);
+        }
+        80% {
+          transform: translate(-1px, -1px) rotate(1deg);
+        }
+        90% {
+          transform: translate(1px, 2px) rotate(0deg);
+        }
+      }
+
+      @keyframes wiggle {
+        0%,
+        80% {
+          transform: rotate(0deg);
+        }
+        85% {
+          transform: rotate(5deg);
+        }
+        95% {
+          transform: rotate(-5deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+    </style>
+    <script src="script.js"></script>
+    <script src="preventZoom.js"></script>
+  </head>
+
+  <body
+    class="bg-black text-white font-lato overflow-x-hidden overflow-y-auto flex-col"
+  >
+    <!-- bg bolo -->
+    <div class="fixed top-0 z-[-1]">
+      <img
+        src="../assets/Red_background.svg"
+        alt="background"
+        class="h-full w-full object-cover"
+      />
+    </div>
+    <div
+      class="hidden fixed inset-0 z-[40]"
+      id="overlay"
+      style="background-color: rgba(0, 0, 0, 0.3)"
+    ></div>
+
+    <header
+      class="glassMorphic sticky flex justify-between items-center w-full px-[2vw] top-0 z-50 text-white"
+    >
+      <img src="../assets/Logo.png" alt="logo" class="w-[20vw] md:w-[8vw]" />
+      <div
+        class="flex lg:hidden flex-col justify-between absolute right-5 top-[1.5vh] w-[30px] md:w-[35px] h-[20px] md:h-[25px] cursor-pointer z-[200] bg-transparent"
+        id="hamburgerMenu"
+      >
+        <span
+          class="w-full h-[3px] md:h-[4px] bg-white transition-all transform origin-center"
+        ></span>
+        <span
+          class="w-full h-[3px] md:h-[4px] bg-white transition-all transform origin-center"
+        ></span>
+        <span
+          class="w-full h-[3px] md:h-[4px] bg-white transition-all transform origin-center"
+        ></span>
+      </div>
+      <nav
+        class="fixed right-0 top-0 h-screen w-4/5 gap-[3vw] px-[2vw] max-w-[250px] md:max-w-[300px] bg-black z-[190] flex flex-col pt-[60px] md:pt-[75px] transform translate-x-full transition-all duration-300 ease-in-out lg:translate-x-0 lg:static lg:h-auto lg:w-auto lg:pt-0 lg:flex lg:flex-row lg:justify-end lg:bg-transparent lg:transition-none"
+        id="navigation"
+      >
+        <a class="navText" href="index.html">Home</a>
+        <a class="navText" href="project.html">Projects</a>
+        <a class="navText text-accent-500" href="contact.html">Contact</a>
+        <a class="navText" href="pet.html">Pets</a>
+      </nav>
+    </header>
+
+    <div class="flex max-lg:flex-col justify-center md:my-[1vh] lg:mx-[1vw]">
+      <!-- text -->
+      <div class="flex flex-col justify-center lg:mx-[5vw]">
+        <p class="opacity-0">hidden bang</p>
+        <h1 class="font-extrabold text-xl md:text-2xl lg:text-3xl firstIndent">
+          GetInTouch(){
+        </h1>
+        <p class="opacity-0">hidden bang</p>
+        <p class="max-lg:hidden opacity-0">hidden mobile</p>
+        <h2 class="font-bold text-lg md:text-xl lg:text-2xl secIndent">
+          //Have a project you need help in
+        </h2>
+        <p class="opacity-0">hidden bang</p>
+        <h2 class="font-bold text-lg md:text-xl lg:text-2xl secIndent">
+          //Feel free to call or text me anytime
+        </h2>
+        <p class="opacity-0">hidden bang</p>
+        <a
+          href="https://www.instagram.com/edriclah_/"
+          class="flex items-center secIndent"
+        >
+          <img src="../assets/Instagram.svg" class="w-[6vw] lg:w-[2vw]" />
+          <p class="mx-[2vw] lg:mx-[1vw]">@edriclah_</p>
+        </a>
+        <p class="opacity-0">hidden bang</p>
+        <a
+          href="https://wa.me/6281216866179"
+          class="flex items-center secIndent"
+        >
+          <img src="../assets/whatsapp.svg" class="w-[6vw] lg:w-[2vw]" />
+          <p class="mx-[2vw] lg:mx-[1vw]">+62 812-1686-6179</p>
+        </a>
+        <p class="opacity-0">hidden bang</p>
+        <a
+          href="https://share.google/p726hUNYxFW12ax4Y"
+          class="flex items-center secIndent"
+        >
+          <img src="../assets/location.svg" class="w-[6vw] lg:w-[2vw]" />
+          <p class="mx-[2vw] lg:mx-[1vw]">
+            Universitas Ciputra, Citraland CBD Boulevard, Surabaya
+          </p>
+        </a>
+        <p class="opacity-0">hidden bang</p>
+        <p class="max-lg:hidden opacity-0">hidden mobile</p>
+        <h1 class="font-extrabold text-xl md:text-2xl lg:text-3xl firstIndent">
+          }
+        </h1>
+      </div>
+      <div class="flex flex-col">
+        <form
+          class="flex flex-col mt-[5vh] lg:mt-[15vh] max-lg:mx-[5vw] lg:w-[50vw] mr-[10vw]"
+        >
+          <input type="text" value="First Name" class="formFormat" /><br />
+          <input type="email" value="Email" class="formFormat" /><br />
+          <input type="tel" value="Phone Number" class="formFormat" /><br />
+          <textarea
+            placeholder="Your message"
+            class="formFormat h-[15vh] lg:h-[20vh]"
+          ></textarea>
+        </form>
+        <div class="flex justify-start pl-[5vw] lg:pl-0 py-[1vh] items-center">
+          <button
+            class="bg-black/40 backdrop-blur-lg border-b border-black/40 p-[1vh] lg:p-[1vw] lg:text-xl lg:font-bold rounded-md"
+          >
+            Send Message
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
